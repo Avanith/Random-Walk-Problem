@@ -5,7 +5,8 @@
  */
 package edu.cuny.csi.csc330.lab5;
 
-
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Intersection implements Comparable<Intersection>  {
 	
@@ -19,23 +20,67 @@ public class Intersection implements Comparable<Intersection>  {
 	/**
 	 * Constructor that takes ave and street values as parameters ... 
 	 */
-	
+	public Intersection(int avenue, int street) {
+		super();
+		this.avenue = avenue;
+		this.street = street;
+	}
+
 	
 	/**
 	 * toString() method  !!!!!!!!!!!!!!!!!
 	 */
-	
+	@Override
+	public String toString() {
+		return "Intersection [avenue=" + avenue + ", street=" + street + "]";
+	}
 	
 	
 	/**
 	 * Getters/Setters !!!!!!!!!!!!!!!!!!!
 	 */
-	
+	public int getAvenue() {
+		return avenue;
+	}
+	public void setAvenue(int avenue) {
+		this.avenue = avenue;
+	}
+	public int getStreet() {
+		return street;
+	}
+	public void setStreet(int street) {
+		this.street = street;
+	}
+
 	
 
 	/**
 	 * hashCode() and equals() methods 
 	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + avenue;
+		result = prime * result + street;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Intersection other = (Intersection) obj;
+		if (avenue != other.avenue)
+			return false;
+		if (street != other.street)
+			return false;
+		return true;
+	}
+
 	
 	@Override
 	public int compareTo(Intersection corner) {
@@ -55,7 +100,7 @@ public class Intersection implements Comparable<Intersection>  {
 		// Complete the methods implied through comments above 
 		// Then uncomment the test code below, and run. 
 		
-		/*
+
 		Intersection corner1 = new Intersection(6, 23); 
 		Intersection corner2 = new Intersection(7, 41); 
 		Intersection corner3 = new Intersection(1, 3); 
@@ -81,7 +126,7 @@ public class Intersection implements Comparable<Intersection>  {
 		
 		System.exit(0);
 		 
-		 */
+
 
 	}
 

@@ -23,9 +23,10 @@ public enum Direction {
 		 	 * !!!!!
 		 	 * WHAT CHANGES NEED TO BE MADE HERE SO THAT THE 4 NEW RANDOM DIRECTIONS ARE CONSIDERED 
 		 	 */
-			int direction = Randomizer.generateInt(1, 4); 
+			int direction = Randomizer.generateInt(1, 8); 
 		
 			// 1 = south,  2 = west, 3 = north, 4 = east 
+			// 5 = northeast, 6 = northwest, 7 = south-west, 8 = south-east
 			if(direction == 1) { // south 
 				 return SOUTH;
 			}
@@ -35,8 +36,20 @@ public enum Direction {
 			else if(direction == 3) {   // north 
 				 return NORTH; 
 			}
-			else {    // east 
+			else if (direction == 4) {    // east 
 				return EAST; 
+			}
+			else if (direction == 5) {   // northeast
+				return NORTHEAST; 
+			}
+			else if (direction == 6) {   // northwest
+				return NORTHWEST; 
+			}
+			else if (direction == 7) {   // south-west
+				return SOUTHWEST; 
+			}
+			else {    					 // south-east
+				return SOUTHEAST; 
 			}
 	 }
 	 

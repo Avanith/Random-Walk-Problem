@@ -23,10 +23,18 @@ public class DrunkWalker {
 	 */
 	public DrunkWalker(int avenue, int street) {	
 		init();
+		startIntersection = new Intersection(avenue, street);
+		currentIntersection = new Intersection(avenue, street);
 	}
 	
 	private void init() {
-		// What should we do here to initialize an instance?? 
+		// What should we do here to initialize an instance??
+		// Create the Collection that tracks the journey 1 to N Intersections 
+
+        // Create the Collection allows me to map Intersections to counts - number of times we land there 
+
+        // Create other Collections instances that would facilitate easier management of what needs to be tracked 
+
 	}
 	
 	/**
